@@ -40,6 +40,7 @@ RUN mkdir -p /var/www/shared/sockets
 ENV RAILS_ENV='production'
 ENV RACK_ENV='production'
 
+RUN bundle update mimemagic
 RUN bundle install --jobs 20 --retry 5 --without development test
 
 RUN gem install foreman
